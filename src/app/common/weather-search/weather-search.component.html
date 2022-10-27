@@ -1,0 +1,11 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Cities arround the world..</mat-label>
+    <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option?.LocalizedName" (click)="searchWeatherResult(option)">
+        {{option?.LocalizedName}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

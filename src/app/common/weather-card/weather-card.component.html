@@ -1,0 +1,60 @@
+<div class="current-weather-card card-module content-module " *ngIf="weatherData[0]">
+  <div class="card-header spaced-content">
+    <h1>Current Weather</h1>
+    <p class="sub">{{weatherData[0]?.DateTime | date:'shortTime'}}</p>
+  </div>
+
+  <div class="card-content">
+    <div class="current-weather">
+      <div class="current-weather-info">
+        <img class="icon" data-src="assets/images/0{{weatherData[0]?.WeatherIcon}}-s.png" viewBox="0 0 288 288" width="120" height="62">
+        <div class="temp">
+          <div class="display-temp">{{weatherData[0]?.Temperature?.Value}}<span class="sub">C</span>
+          </div>
+        </div>
+      </div>
+      <div class="phrase">{{weatherData[0]?.IconPhrase}}</div>
+    </div>
+  </div>
+
+
+
+  <div class="current-weather-details">
+    <div class="left">
+      <div class="detail-item spaced-content">
+        <div>Wind</div>
+        <div>{{weatherData[0]?.Wind?.Speed?.Value}} {{weatherData[0]?.Wind?.Speed?.Unit}}</div>
+      </div>
+      <div class="detail-item spaced-content">
+        <div>Wind Gusts</div>
+        <div>{{weatherData[0]?.WindGust?.Speed?.Value}} {{weatherData[0]?.WindGust?.Speed?.Unit}}</div>
+      </div>
+      <div class="detail-item spaced-content">
+        <div>Humidity</div>
+        <div>{{weatherData[0]?.RelativeHumidity}} </div>
+      </div>
+      <div class="detail-item spaced-content">
+        <div>Indoor Humidity</div>
+        <div>{{weatherData[0]?.IndoorRelativeHumidity}}</div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="detail-item spaced-content">
+        <div>Dew Point</div>
+        <div>{{weatherData[0]?.DewPoint?.Value}} {{weatherData[0]?.DewPoint?.Unit}}</div>
+      </div>
+      <div class="detail-item spaced-content">
+        <div>Rain Probability</div>
+        <div>{{weatherData[0]?.RainProbability}}%</div>
+      </div>
+      <div class="detail-item spaced-content">
+        <div>Cloud Cover</div>
+        <div>{{weatherData[0]?.CloudCover}}</div>
+      </div>
+      <div class="detail-item spaced-content">
+        <div>Rain</div>
+        <div>{{weatherData[0]?.Rain?.Value}} {{weatherData[0]?.Rain?.Unit}}</div>
+      </div>
+    </div>
+  </div>
+</div>
